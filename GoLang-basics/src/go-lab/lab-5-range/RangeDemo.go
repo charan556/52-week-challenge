@@ -26,8 +26,8 @@ func main() {
 		fmt.Printf("%s -> %s\n", k, v)
 	}
 
-	fmt.Println("---- demo3 -----")
-	for i := range "charan" {
+	fmt.Println("---- demo3 ----- string acts as range index")
+	for i := range "charanvallala" {
 		fmt.Println(i)
 	}
 
