@@ -11,6 +11,7 @@ import com.spotify.docker.client.messages.AuthConfig;
 import com.spotify.docker.client.messages.Container;
 import com.spotify.docker.client.messages.ContainerConfig;
 import com.spotify.docker.client.messages.ContainerCreation;
+import com.spotify.docker.client.messages.ContainerInfo;
 
 public class DockerService {
 
@@ -42,6 +43,22 @@ public class DockerService {
 		} catch (DockerException | InterruptedException | DockerCertificateException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void listContainerInfo(String id) {
+		DockerClient docker = null;
+		try {
+			docker = DefaultDockerClient.fromEnv().build();
+		} catch (DockerCertificateException e1) {
+			e1.printStackTrace();
+		}
+		ContainerInfo info = null;
+		try {
+			info = docker.inspectContainer(id);
+		} catch (DockerException | InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println(info.toString());
 	}
 
 	public static String buildContainer(String image, String tagName) {
