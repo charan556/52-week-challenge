@@ -1,8 +1,0 @@
-com/charan/springmvc/configuration/CORSFilter.class
-com/charan/springmvc/model/TwitterContainer.class
-com/charan/springmvc/configuration/HelloWorldConfiguration.class
-com/charan/springmvc/service/DockerService.class
-com/charan/springmvc/controller/TwitterController.class
-com/charan/springmvc/service/TwitterService.class
-com/charan/springmvc/configuration/HelloWorldInitializer.class
-com/charan/springmvc/controller/IndexController.class
