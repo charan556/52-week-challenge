@@ -2,26 +2,28 @@ class Person:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-    
+
     @property
     def fullname(self):
         return "%s %s" % (self.name, self.surname)
-    
+
     @fullname.setter
     def fullname(self, value):
-        name, surname = value.split(" ")
+        # this is much more complicated in real life
+        name, surname = value.split(" ", 1)
         self.name = name
         self.surname = surname
 
-charan = Person("Charan", "Vallala")
+    @fullname.deleter
+    def fullname(self):
+        del self.name
+        del self.surname
 
-# print(charan.fullname())  # use this if full name is not defined as property
-print(charan.fullname)
+jane = Person("Jane", "Smith")
+print(jane.fullname)
 
-charan.fullname = "Ishaan Vallala"
-print(charan.fullname)
-print(charan.name)
-print(charan.surname)
+jane.fullname = "Jane Doe"
+print(jane.fullname)
 
-print(dir(charan)) #inspecting an object
-
+print(jane.name)
+print(jane.surname)
