@@ -16,7 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class WordCount {
 
 	
-	//this is my change
+	//this is my change-1
 	public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
 
 		private final static IntWritable one = new IntWritable(1);
